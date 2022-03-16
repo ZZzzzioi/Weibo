@@ -18,9 +18,9 @@ def open_web_1():
     return driver
 
 def open_web_2(driver):
-    driver.find_element_by_id('loginname').send_keys('18309144368')  #输入微博账号
+    driver.find_element_by_id('loginname').send_keys('********')  #输入微博账号
     time.sleep(5)
-    driver.find_element_by_name('password').send_keys('Iieng@9737')  #输入微博密码,偶尔需要填写验证码
+    driver.find_element_by_name('password').send_keys('********')  #输入微博密码,偶尔需要填写验证码
     driver.find_element_by_xpath('//*[@id="pl_login_form"]/div/div[3]/div[6]/a').click()  #登录，后续仍需要进行手机扫码验证    
     time.sleep(50)
     driver.find_element_by_xpath('//*[@id="plc_top"]/div/div/div[2]/a').click() #点击搜索
@@ -140,16 +140,16 @@ def save_csv_user(userinfos):
 def save_csv(content_list):
     name = ['微博发布者', '微博发布者链接', '微博内容', '时间', '转发数','评论数', '点赞数']
     content_list_csv = pd.DataFrame(columns = name, data = content_list)
-    #content_list_csv.to_csv('C:/CodeStorage/PY_Code/spider/weibodata_新型冠状病毒_1-40.csv', encoding = 'UTF-8')
-    content_list_csv.to_csv('C:/CodeStorage/PY_Code/spider/weibodata_3.csv', encoding = 'UTF-8')  #存储地址，此处需要更改
+    #content_list_csv.to_csv('./weibodata_新型冠状病毒_1-40.csv', encoding = 'UTF-8')
+    content_list_csv.to_csv('./weibodata_3.csv', encoding = 'UTF-8')  #存储地址，此处需要更改
 
 def sendmail(filename_address):
-    receiver = 'jizisheng@foxmail.com'
+    receiver = '*********'
     body = '代码运行完成'
     filename = filename_address
     yag = yagmail.SMTP(
-        user = '2379466557@qq.com',
-        password = 'twnsubqmnifoecdj',
+        user = '********',
+        password = '**********',
         host = 'smtp.qq.com'
     )
 
@@ -184,7 +184,7 @@ def main():
     #time.sleep(40)
     #userinfos = search_user(driver)
     #save_csv_user(userinfos)
-    #sendmail('C:/CodeStorage/PY_Code/spider/WeiboUserData.csv')
+    #sendmail('./WeiboUserData.csv')
 
 if __name__ == '__main__':
     main()
